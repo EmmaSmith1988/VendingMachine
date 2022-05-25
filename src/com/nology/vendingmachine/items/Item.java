@@ -1,29 +1,14 @@
 package com.nology.vendingmachine.items;
 
-public class Item {
-    String name;
-    String category;
-    double price;
+public enum Item {
+    TWIX(0.70, "Chocolate bar"), DAIRYMILK(1.50, "Chocolate bar"), COKE(1.50, "drink"), LUCOZADE(3.25, "drink"), MCCOYS(1.25, "crisps"), WALKERS(1.75, "crisps");
 
-    public Item(String name, String category, double price) {
-        this.name = name;
-        this.category = category;
+    private double price;
+    private String category;
+    private int quantity;
+
+    Item(double price, String category) {
         this.price = price;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
         this.category = category;
     }
 
@@ -31,7 +16,15 @@ public class Item {
         return price;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+    public String getCategory() {
+        return category;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 }
